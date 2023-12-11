@@ -209,19 +209,19 @@ function updateAdventurePrices() {
         }
     
         if (divingLocalKids>0) {
-            bookingInfo += "Local Adult Booking : " + divingLocalKids;
+            bookingInfo += "\nLocal Kids Booking : " + divingLocalKids;
         } else {
             bookingInfo += "";
         }
     
         if (divingForeignAdults) {
-            bookingInfo += "Local Adult Booking : " + divingForeignAdults;
+            bookingInfo += "\nForeign Adult Booking : " + divingForeignAdults;
         } else {
             bookingInfo += "";
         }
 
         if (divingForeignKids){
-            bookingInfo += "\nLocal Adult Booking : " + divingForeignKids;
+            bookingInfo += "\nForeign Kids Booking : " + divingForeignKids;
         } else {
             bookingInfo += "";}
 
