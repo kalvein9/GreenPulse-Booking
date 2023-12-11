@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./hotel.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                
+                <li class='logo'><a href='./hotel.html'><img src='./aran.png' alt="logo"/></a></li>
+                <section>
+                <input type='checkbox' id='check' />
+                <span class="menu">
+                    <li><a href="hotel.html ">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./branches.html">Branches</a></li>
+                    <li><a href="adventures.html">Adventures</a></li>
+                    <li><a href="./Restuarants.html">Restuarants</a></li>
+                    <li><a href="./booking.html">Booking</a></li>
+                    <label for="check" class="close-menu"><img src="./hamburger.png" alt=""></label>
+                </span>
+                <label for="check" class="open-menu"><img src="./hamburger.png" alt=""></label>
+            </section>
+            
+            </ul>
+        </nav>
+    </header>
+    <section class="book">
+    <section class="bookcont">
+        <!-- Booking Information -->
+        <section id="information">
+            <h1>Booking Information</h1>
+            <p>Current Booking(s) : <span id="currentBooking"></span></p>
+            <p>Cost of Current Booking(s) : <span id="currentBookingCost"></span></p>
+            <p>Overall Booking Information : <span id="overallBooking"></span></p>
+            <p><span id="overallBooking2"></span></p>
+            <p>Overall Cost of Booking :<span id="overallBookingCost"></span></p>
+            </section>
+    </section>
+    <section class="bookcontainer">
+        <h2>GreenPulse Booking Form</h2>
+        <form id="bookingForm">
+            <!-- Room Selection -->
+            
+            <label for="cusName">Customer Name:</label>
+            <input type="text" id="cusName"  >
+
+            <label for="cusMail">Email:</label>
+            <input type="email" id="cusMail">
+    
+            <!-- Number of Rooms -->
+            <label for="numRooms">Number of Rooms:</label>
+            <input type="number" id="numRooms" min="1" value="0" >
+
+            <label for="roomType">Choose Room Type:</label>
+            <select id="roomType">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="triple">Triple</option>
+            </select>
+    
+            <!-- Adults and Children -->
+            <label for="numAdults">Number of Adults:</label>
+            <input type="number" id="numAdults" min="1" value="1" >
+            <label for="numChildren">Number of Children ( Less than Age 5 ):</label>
+            <input type="number" id="numChildren" min="0" value="0">
+    
+            <!-- Duration of Stay -->
+            <label for="stayDuration">Duration of Stay (in days):</label>
+            <input type="number" id="stayDuration" min="1" value="1">
+    
+            <!-- Extra Requirements -->
+            <section id="extraReq">
+            <label>Extra Requirements : </label>
+            <input type="checkbox" id="wifi" > <label for="wifi">WIFI</label>
+            <input type="checkbox" id="poolView"> <label for="poolView">Pool View</label>
+            <input type="checkbox" id="gardenView"> <label for="gardenView">Garden View</label>
+            </section>
+            <!-- Promo Code -->
+            <label for="promoCode">Promo Code:</label>
+            <input type="text" id="promoCode">
+    
+            <!-- Buttons -->
+            
+            <button type="button" onclick="addToFavorites()">Add to Favourites</button>
+            <button type="button" onclick="bookNow()">Book Now</button>
+            
+    
+            
+    
+            <!-- Loyalty Points -->
+            <label for="loyaltyPoints">Loyalty Points:</label>
+            <input type="text" id="loyaltyPoints" readonly>
+    
+            <section id="divingSection">
+                <h1>Adventure Booking</h1>
+                <h2>Diving Options</h2>
+    
+                <!-- Diving for Local Adults -->
+                <label for="divingLocalAdults">Diving for Local Adults (1 hr) - 5000LKR:</label>
+                <input type="number" id="divingLocalAdults" min="0" value="0" >
+    
+                <!-- Diving for Local Kids (above 5 years) -->
+                <label for="divingLocalKids">Diving for Local Kids (above 5 years) - 2000LKR:</label>
+                <input type="number" id="divingLocalKids" min="0" value="0">
+    
+                <!-- Diving for Foreign Adults -->
+                <label for="divingForeignAdults">Diving for Foreign Adults - 10000LKR:</label>
+                <input type="number" id="divingForeignAdults" min="0" value="0">
+    
+                <!-- Diving for Foreign Kids -->
+                <label for="divingForeignKids">Diving for Foreign Kids - 5000LKR:</label>
+                <input type="number" id="divingForeignKids" min="0" value="0">
+    
+                <h3>Diving Guides</h3>
+                <section id="guidebox">
+                <input type="checkbox" id="guideAdults"> <label for="guideAdults">Adults - 1000LKR extra(1hr)</label>
+                <br>
+                <input type="checkbox" id="guideKids"> <label for="guideKids">Kids - 500LKR extra(1hr)</label>
+                </section>
+
+                <label for="adventureHours">Number of Hours:</label>
+                <input type="number" id="adventureHours" value="1"><br>
+                 <!-- Buttons -->
+
+                <button type="button" onclick="addToFavoritesAd()">Add to Favourites</button>
+                <button type="button" onclick="bookAdventure()">Book Adventure</button>
+            </section>
+    
+             
+    
+       
+            
+        </form>
+       
+        <section id="buttonsEnd">
+            <button type="button" onclick="checkLoyalty()">Check Loyalty</button>
+            <button type="button" onclick="resetForm()">Reset-Form</button>
+        </section>
+        
+   
+    
+    
+    
+        
+
+    </section>
+    
+    
+        <footer>
+            <section class="footer">
+            <section class="row">
+            <a href="#"><img src="./Screenshot_2023-09-10_002928-removebg-preview.png" alt=""></a>
+            <a href="#"><img src="./Screenshot_2023-09-10_002850-removebg-preview.png" alt=""></a>
+            <a href="#"><img src="./Screenshot_2023-09-10_002734-removebg-preview.png" alt=""></a>
+            <a href="#"><img src="./Screenshot_2023-09-10_002816-removebg-preview.png" alt=""></a>
+            </section>
+            
+            <section class="row">
+            <ul>
+                <li><a href="./booking.html">Book Now</a></li>
+                <li><a href="./branches.html">Our Branches </a></li>
+                <li><a href="./Restuarants.html">Restuarants</a></li>
+                <li><a href="./hotel.html">About Us</a></li>
+                <li><a href="./adventures.html">Expieriances</a></li>
+            </ul>
+            </section>
+            
+            <section class="row">
+                Email Us : greenpulsehotel@gmail.com -- Hotline : 081-2588985
+                    <br>
+            GREENPULSE Copyright © 2015 GreenPulse - All rights reserved || Designed By: Kevin 
+            </section>
+            </section>
+        </footer>
+    </section>
+
+        
+    <script src="./Booking.js"></script>
+</body>
+</html>
+

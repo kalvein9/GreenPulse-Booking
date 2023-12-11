@@ -1,0 +1,89 @@
+/* General styles */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Booking form container */
+  
+  .booking-form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Booking form heading */
+  
+  .booking-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form labels and inputs */
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Select boxes */
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Booking actions buttons */
+  
+  #book-now-button, #book-adventure-button {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  /* Promo code section */
+  
+  .promo-code {
+    margin-top: 20px;
+  }
+  
+  /* Loyalty points section */
+  
+  .loyalty-points {
+    margin-top: 20px;
+  }
+  
+  /* Booking summary tables */
+  
+  .booking-summary table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .booking-summary th, td {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .booking-summary th {
+    background-color: #eee;
+  }
+  
+  /* Total cost row */
+  
+  #total-cost {
+    font-weight: bold;
+  }
