@@ -111,7 +111,7 @@ function updatePrices() {
         var gardenViewCharge = document.getElementById("gardenView").checked;
 
         // Extra bed charge
-         var extraBedCharge = document.getElementById("extraBed").checked ? 8000.00 : 0.00;
+         var extraBedCharge = document.getElementById("extraBed").checked ? 8000.00 * stayDuration : 0.00;
         
         // Total bill amount
         var totalBillAmount = totalRoomPrice + extraMealCharge + extraBedCharge;
