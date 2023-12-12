@@ -27,7 +27,7 @@ function showError(message) {
 }
 
 // Function to update booking information in the HTML
-function updateBookingInformation(bookingType, numRooms, roomType, stayDuration, totalBillAmount, wifi, poolView, gardenView) {
+function updateBookingInformation(bookingType, numRooms, roomType, stayDuration, totalBillAmount, wifi, poolView, gardenView, extraBedCharge) {
       // Include extra requirements if selected
       var bookingInfo = "\n\n" + numRooms + " " + roomType + " room(s) for " + stayDuration + " day(s)" + "\n\nExtra Requirements : ";
 
@@ -51,6 +51,10 @@ function updateBookingInformation(bookingType, numRooms, roomType, stayDuration,
           bookingInfo += "";
       }
       if (bookingInfo)
+          
+      if (extraBedCharge > 0) {
+        bookingInfo += "\nExtra Bed (LKR " + extraBedCharge.toFixed(2) + ")";
+      }
      
     
   
@@ -106,8 +110,11 @@ function updatePrices() {
         var poolViewCharge = document.getElementById("poolView").checked;
         var gardenViewCharge = document.getElementById("gardenView").checked;
 
+        // Extra bed charge
+         var extraBedCharge = document.getElementById("extraBed").checked ? 8000.00 : 0.00;
+        
         // Total bill amount
-        var totalBillAmount = totalRoomPrice + extraMealCharge;
+        var totalBillAmount = totalRoomPrice + extraMealCharge + extraBedCharge;
 
         //Add prices for extra requirements if needed
         if (wifiCharge) {
@@ -129,7 +136,7 @@ function updatePrices() {
         
         
         // Update booking information in the HTML
-        updateBookingInformation("Hotel Booking", numRooms, roomType, stayDuration, totalBillAmount, wifiCharge, gardenViewCharge, poolViewCharge);
+        updateBookingInformation("Hotel Booking", numRooms, roomType, stayDuration, totalBillAmount, wifiCharge, gardenViewCharge, poolViewCharge, extraBedCharge);
     } catch (error) {
         showError(error);
     }
